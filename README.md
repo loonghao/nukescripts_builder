@@ -3,6 +3,15 @@
 
 Build a Nuke scripts from a template.
 
+Features
+--------
+- No need for Nuke license.
+- Easy to use.
+- High performance.
+- Autoescaping.
+- Template inheritance.
+- Supports native python expressions.
+
 install
 -------
 Clone from github.
@@ -64,3 +73,7 @@ build(source_string,
       {'file_path': 'c:/test.exr',
        'output': 'c:/test.jpg'}, 'c:/my_nukescripts.nk')
 ```
+
+Basic syntax of the template
+----------------------------
+Based on third party package [Quik](https://github.com/avelino/quik/blob/master/README.rst)
