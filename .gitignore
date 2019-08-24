@@ -19,3 +19,5 @@ result/
 # Coverage output
 .coverage
 /venv/
+/.eggs/
+/nukescripts_builder.egg-info/

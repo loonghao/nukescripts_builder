@@ -1,5 +1,6 @@
-nukescripts_builder
--------------------
+# nukescripts_builder
+[![build Status](https://travis-ci.com/loonghao/nukescripts_builder.svg?branch=master)](https://travis-ci.com/loonghao/nukescripts_builder)
+
 Build a Nuke scripts from a template.
 
 install
