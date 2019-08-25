@@ -7,14 +7,17 @@ module author: Long Hao <hoolongvfx@gmail.com>
 import os
 
 # Import local modules
-from nukescripts_builder.core import build
+from nukescripts_builder.core import build_template
 
 
 def test_build_nukescripts(tmpdir):
-    source_string = """Read {
+    source_string = """
+Read {
  inputs 0
- file_type jpeg
- file @file_path
+ #if $getVar('file_type', ''):
+ file_type $file_type
+ #end if
+ file $read_file
  origset true
  name Read1
  selected true
@@ -30,7 +33,7 @@ OCIOColorSpace {
  ypos -47
 }
 Write {
- file @output
+ file $write_file
  name Write1
  selected true
  xpos 54
@@ -38,11 +41,13 @@ Write {
  }
 """
     file_path = 'Y:/113803nya2022gg2pe65ka.jpg'
+    write_file = 'c:/test.exr'
     output_path = str(tmpdir.join('test.nk'))
-    build(source_string,
-          {'file_path': file_path,
-           'output': 'c:/test.exr'},
-          output_path)
+    build_template(template=source_string, output_path=output_path, data={
+        'read_file': file_path,
+        'write_file': write_file
+    })
     assert os.path.isfile(output_path)
     with open(output_path, 'r') as file_obj:
         assert 'file {}'.format(file_path) in file_obj.read()
+        assert 'file_type' not in file_obj.read()

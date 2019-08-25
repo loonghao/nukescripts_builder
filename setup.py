@@ -15,7 +15,7 @@ setup(
     packages=['nukescripts_builder'],
     description='Build a Nuke scripts from a template.',
     entry_points={},
-    install_requires=['quik'],
+    install_requires=['cheetah3'],
     classifiers=[
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
