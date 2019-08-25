@@ -1,5 +1,5 @@
 # nukescripts_builder
-[![build_template Status](https://travis-ci.com/loonghao/nukescripts_builder.svg?branch=master)](https://travis-ci.com/loonghao/nukescripts_builder)
+[![build_nukescripts Status](https://travis-ci.com/loonghao/nukescripts_builder.svg?branch=master)](https://travis-ci.com/loonghao/nukescripts_builder)
 
 Build a Nuke scripts from a template.
 
@@ -25,7 +25,7 @@ python setup.py install
 
 Why?
 ====
-It's not easy to build_template complex `nukescripts` or `nuke gizmo` using the Nuke API.
+It's not easy to build_nukescripts complex `nukescripts` or `nuke gizmo` using the Nuke API.
 
 You need to understand `Nuke` and need to understand the `Nuke` Python API.
 
@@ -42,7 +42,7 @@ nuke.scriptSave('c:/my_nukescripts.nk')
 You just need to understand `Nuke` and know a little bit of Python.
 
 ```python
-from nukescripts_builder.core import build_template
+from nukescripts_builder.core import build_nukescripts
 
 source_string ="""
 Read {
@@ -77,10 +77,12 @@ Write {
 file_path = 'c:/test.exr'
 write_file = 'c:/test.jpg'
 output_path = 'c:/my_nukescripts.nk'
-build_template(template=source_string, output_path=output_path, data={
+data = {
     'read_file': file_path,
     'write_file': write_file
-})
+}
+build_nukescripts(template=source_string, output_path=output_path,
+                  data=data)
 ```
 
 Basic syntax of the template

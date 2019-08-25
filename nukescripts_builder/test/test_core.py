@@ -7,7 +7,7 @@ module author: Long Hao <hoolongvfx@gmail.com>
 import os
 
 # Import local modules
-from nukescripts_builder.core import build_template
+from nukescripts_builder.core import build_nukescripts
 
 
 def test_build_nukescripts(tmpdir):
@@ -43,7 +43,7 @@ Write {
     file_path = 'Y:/113803nya2022gg2pe65ka.jpg'
     write_file = 'c:/test.exr'
     output_path = str(tmpdir.join('test.nk'))
-    build_template(template=source_string, output_path=output_path, data={
+    build_nukescripts(template=source_string, output_path=output_path, data={
         'read_file': file_path,
         'write_file': write_file
     })

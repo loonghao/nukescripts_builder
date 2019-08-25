@@ -1,11 +1,9 @@
-# Import built-in modules
-
 # Import third-party modules
 from nukescripts_builder.nuke_template import NukeTemplate
 
 
-def build_template(template, data, output_path):
-    """Start build nuke template.
+def build_nukescripts(template, data, output_path):
+    """Start build nuke scripts.
 
     Args:
         template (str): The absolute path of a template file or real body
@@ -17,7 +15,7 @@ def build_template(template, data, output_path):
         str: Absolute path of the file.
 
     Examples:
-        >>> build_template('c:/your/template.txt', {'key': 'value'},
+        >>> build_nukescripts('c:/your/template.txt', {'key': 'value'},
         ...               'c:/output.nk')
 
     """
