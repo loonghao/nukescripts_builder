@@ -27,6 +27,6 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
     setup_requires=['pytest-runner'],
-    tests_require=['pytest==4.6'],
+    tests_require=['pytest==9.0.3'],
     package_data={'': ['LICENSE']},
 )
